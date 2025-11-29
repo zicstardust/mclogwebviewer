@@ -1,7 +1,14 @@
 {% extends "base.html" %}
 
 
-{% block content %}
+{% block logs_list %}
+{%for i in log_list%}
+<a href="?date={{i}}">{{ i.replace('.log', ('')) }}</a>
+{%endfor%}
+{% endblock %}
+
+
+{% block log %}
 {%for i in log%}
     <p>{{ i }}</p>
 {%endfor%}
