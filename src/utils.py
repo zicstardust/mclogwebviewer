@@ -2,20 +2,7 @@ import shutil
 import gzip
 import os
 
-path_in = os.environ.get("LOGS_FOLDER_PATH", "/logs")
-#path_in = "./logs"
-#path_in = "/logs"
-#path_out = "./processed_logs"
-path_out = os.environ.get("PROCECESSED_LOGS_FOLDER_PATH", "/data")
-#path_out = "/data"
-
-if os.getenv('FLASK_DEBUG'):
-    print(f'\npath_in={path_in}')
-    print(f'path_out={path_out}\n')
-
-dir_list = os.listdir(path_in)
-
-def processed_logs():
+def processed_logs(dir_list,path_in,path_out):
     for f in dir_list:
         if f.endswith(".log.gz"):
             with gzip.open(f'{path_in}/{f}', 'rb') as file_in:
@@ -32,11 +19,12 @@ def processed_logs():
                 print(f'ignored: {f}')
 
 
-def logs_list():
+def logs_list(path_out):
     logs_list = os.listdir(path_out)
     if os.getenv('FLASK_DEBUG'):
         print(f'\nlogs_list:\n{logs_list}')
     return logs_list
+
 
 def open_log(log_file):
     if os.getenv('FLASK_DEBUG'):
