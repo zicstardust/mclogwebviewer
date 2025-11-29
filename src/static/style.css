@@ -1,0 +1,17 @@
+div.content{
+    background-color: black;
+    color: white;
+    overflow-x:hidden;
+    overflow-y:visible;
+    margin-bottom: 10%;
+    border-style: groove;
+    border-radius: 5px;
+    border-color: white;
+}
+
+
+p {
+    font-family: 'Ariel';
+    font-size: 13px;
+    line-height: 13px;
+}

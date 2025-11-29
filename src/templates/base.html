@@ -1,0 +1,18 @@
+<!doctype html>
+<meta charset="UTF-8">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>MC Server logs</title>
+    {% block head %}{% endblock %}
+</head>
+
+<body>
+    <div>
+        <h1>{{ date }}</h1>
+    </div>
+
+     <div class="content">
+        {% block content %}{% endblock %}
+     </div>
+     {% block script %}{% endblock %}
+</body>
