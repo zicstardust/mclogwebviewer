@@ -1,11 +1,8 @@
-{% extends "base.html" %}
+{% extends "nav.html" %}
 
 
 {% block logs_list %}
 
-<div>
-    <button id=hideshowbutton type="button" class="btn btn-success" onclick="hideshowDiv()">Show Logs</button>
-</div>
 <div id="logs_list" class="container text-center" style="display: none;">
       <div class="row">
         <div class="col">
@@ -21,7 +18,7 @@
 {% block log %}
 
     <h2>{{ date.replace('.log', ('')) }}</h2>
-    <div id="logviewer" class="overflow-scroll" style="max-width: 100%; max-height: 75dvb;">
+    <div id="logviewer" class="overflow-scroll" style="max-width: 100%; max-height: 82dvb;">
         {%for i in log%}
             <p id="logtext">{{ i }}</p>
         {%endfor%}
