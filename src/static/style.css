@@ -1,4 +1,13 @@
-div.log{
+html#base {
+    max-height: 100%;
+}
+
+button#hideshowbutton{
+    position:sticky; 
+    left:100%;
+}
+
+div#logviewer{
     background-color: black;
     color: white;
     overflow-x:hidden;
@@ -10,7 +19,7 @@ div.log{
 }
 
 
-p {
+p#logtext {
     font-family: 'Ariel';
     font-size: 13px;
     line-height: 13px;
