@@ -1,6 +1,6 @@
 services:
    mclogwebviewer:
-    container_name: mc-log-web-viewer
+    container_name: mclogwebviewer
     build: .
     #env_file: .env
     ports:
