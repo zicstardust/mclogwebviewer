@@ -8,6 +8,7 @@ on:
       - 'requirements.txt'
       - 'src/**'
       - 'entrypoint.sh'
+      - '.dockerignore'
   pull_request:
     branches: [ "main" ]
     paths:
@@ -15,6 +16,7 @@ on:
       - 'requirements.txt'
       - 'src/**'
       - 'entrypoint.sh'
+      - '.dockerignore'
 
 env:
   PLATAFORM_ARCH: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64/v8,linux/ppc64le,linux/s390x
