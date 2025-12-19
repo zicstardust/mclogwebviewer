@@ -7,3 +7,4 @@ services:
       - "8080:8080"
     volumes:
       - ./logs:/logs:ro
+      - ./server-icon.png:/server-icon.png:ro

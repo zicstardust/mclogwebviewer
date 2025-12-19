@@ -3,3 +3,4 @@ __pycache__
 logs/
 processed_logs/
 .env
+server-icon.png

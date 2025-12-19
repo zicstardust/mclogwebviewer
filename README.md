@@ -40,6 +40,7 @@ services:
       - 8080:8080/tcp #Web port
     volumes:
       - <Minecraft Server Logs Path>:/logs:ro
+      - <Minecraft Server Icon Path>:/server-icon.png:ro #Opcional
 ```
 
 ## Environment variables
