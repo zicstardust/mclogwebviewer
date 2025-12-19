@@ -15,15 +15,7 @@ if os.getenv('FLASK_DEBUG'):
 path_in = "/logs"
 path_out = "/data"
 hide_github_icon = os.environ.get("HIDE_GITHUB_ICON", False)
-
-if os.getenv('FLASK_DEBUG'):
-    path_in = os.environ.get("LOGS_FOLDER_PATH", path_out)
-    path_out = os.environ.get("PROCECESSED_LOGS_FOLDER_PATH", path_out)
-
 max_logs = os.environ.get("MAX_LOGS", 0)
-
-if os.getenv('FLASK_DEBUG'):
-    print(f'MAX_LOGS: {max_logs}')
 
 
 app = Flask(__name__)
@@ -35,16 +27,28 @@ else:
     server_icon=False
 
 
-@app.route("/")
-def index():
-    if os.getenv('FLASK_DEBUG'):
-        print(f'\npath_in={path_in}')
-        print(f'path_out={path_out}')
-        print(f'server_icon={server_icon}')
-        print(f'hide_github_icon={hide_github_icon}\n')
+if os.getenv('FLASK_DEBUG'):
+    print('=========FLASK_DEBUG==========')
     
+    path_in = os.environ.get("LOGS_FOLDER_PATH", path_out)
+    path_out = os.environ.get("PROCECESSED_LOGS_FOLDER_PATH", path_out)
+
+    print(f'MAX_LOGS: {max_logs}')
+    print(f'path_in={path_in}')
+    print(f'path_out={path_out}')
+    print(f'server_icon={server_icon}')
+    print(f'hide_github_icon={hide_github_icon}')
+    
+    print('==============================')
+
+@app.route("/")
+def index():   
     dir_list = os.listdir(path_in)
-    processed_logs(dir_list=dir_list,path_in=path_in,path_out=path_out,max_logs=max_logs)
+    processed_logs(dir_list=dir_list,
+                   path_in=path_in,
+                   path_out=path_out,
+                   max_logs=max_logs
+                   )
     date = request.args.get('date', default = "latest")
     log = open_log(f'{path_out}/{date}.log')
     log_list = logs_list(path_out=path_out)
