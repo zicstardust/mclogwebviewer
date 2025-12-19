@@ -51,3 +51,4 @@ services:
 | `PUID` | Set UID with read permission on log files | 1000 |
 | `PGID` | Set GID with read permission on log files | 1000 |
 | `HIDE_GITHUB_ICON` | Hide GitHub icon | False |
+| `MAX_LOGS` | Maximum number of old logs. If `0` displays all logs. | 0 |

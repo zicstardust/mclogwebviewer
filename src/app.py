@@ -20,6 +20,12 @@ if os.getenv('FLASK_DEBUG'):
     path_in = os.environ.get("LOGS_FOLDER_PATH", path_out)
     path_out = os.environ.get("PROCECESSED_LOGS_FOLDER_PATH", path_out)
 
+max_logs = os.environ.get("MAX_LOGS", 0)
+
+if os.getenv('FLASK_DEBUG'):
+    print(f'MAX_LOGS: {max_logs}')
+
+
 app = Flask(__name__)
 
 
@@ -38,7 +44,7 @@ def index():
         print(f'hide_github_icon={hide_github_icon}\n')
     
     dir_list = os.listdir(path_in)
-    processed_logs(dir_list=dir_list,path_in=path_in,path_out=path_out)
+    processed_logs(dir_list=dir_list,path_in=path_in,path_out=path_out,max_logs=max_logs)
     date = request.args.get('date', default = "latest")
     log = open_log(f'{path_out}/{date}.log')
     log_list = logs_list(path_out=path_out)

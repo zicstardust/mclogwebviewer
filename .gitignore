@@ -1,6 +1,6 @@
 __pycache__
 .venv/
 logs/
-processed_logs/
+data/
 .env
 server-icon.png
