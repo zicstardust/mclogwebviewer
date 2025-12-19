@@ -3,10 +3,14 @@ name: Update docker HUB README.md
 on:
   push:
     branches: [ "main" ]
-    paths: [ "README.md" ]
+    paths:
+      - 'README.md'
+      - '.github/workflows/docker-push-readme.yml'
   pull_request:
     branches: [ "main" ]
-    paths: [ "README.md" ]
+    paths:
+      - 'README.md'
+      - '.github/workflows/docker-push-readme.yml'
 
 env:
   CONTAINER_REPO: ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.DOCKERHUB_REPOSITORY }}
