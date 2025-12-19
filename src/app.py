@@ -39,8 +39,8 @@ def index():
     
     dir_list = os.listdir(path_in)
     processed_logs(dir_list=dir_list,path_in=path_in,path_out=path_out)
-    date = request.args.get('date', default = "latest.log")
-    log = open_log(f'{path_out}/{date}')
+    date = request.args.get('date', default = "latest")
+    log = open_log(f'{path_out}/{date}.log')
     log_list = logs_list(path_out=path_out)
     return render_template("index.html",
                            log=log,

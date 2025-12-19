@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col">
     {%for i in log_list%}
-        <a href="?date={{i}}"><button type="button" class="btn btn-outline-success">{{ i.replace('.log', ('')) }}</button></a>
+        <a href="?date={{i}}"><button type="button" class="btn btn-outline-success">{{i}}</button></a>
     {%endfor%}
     </div>
     </div>
