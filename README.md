@@ -52,4 +52,4 @@ services:
 | `PGID` | Set GID with read permission on log files | 1000 |
 | `HIDE_GITHUB_ICON` | Hide GitHub icon | False |
 | `MAX_LOGS` | Maximum number of old logs. If `0` displays all logs. | 0 |
-| `APP_TITLE` | Set Page Title | |
+| `APP_TITLE` | Set Page Title | MC Log Web Viewer  |
