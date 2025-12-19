@@ -50,3 +50,4 @@ services:
 | `TZ` | Set Timezone | |
 | `PUID` | Set UID with read permission on log files | 1000 |
 | `PGID` | Set GID with read permission on log files | 1000 |
+| `HIDE_GITHUB_ICON` | Hide GitHub icon | False |
