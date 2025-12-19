@@ -3,12 +3,13 @@
 {% block nav %}
 <nav class="navbar bg-body-tertiary">
     <div class="container-fluid">
-        <a class="navbar-brand">
-        {% if server_icon %}
-            <img src="{{ url_for('static', filename='server-icon.png') }}" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
-        {% else %}
-            <img src="https://cdn.worldvectorlogo.com/logos/minecraft-1.svg" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
-        {% endif %}
+        <a class="navbar-brand">       
+            <img src="{% if server_icon %}
+                {{ url_for('static', filename='server-icon.png') }}
+            {% else %}
+                https://cdn.worldvectorlogo.com/logos/minecraft-1.svg
+            {% endif %}"
+            alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
             MC Log Web Viewer
         </a>
         <button id=hideshowbutton type="button" class="btn btn-outline-success" onclick="hideshowDiv()">Select Log</button>
