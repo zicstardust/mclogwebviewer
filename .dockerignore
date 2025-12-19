@@ -1,4 +1,5 @@
 src/__pycache__/
+src/routes/__pycache__/
 src/libs/__pycache__/
 src/static/server-icon.png
 src/static/server-icon

@@ -3,13 +3,14 @@ import gzip
 import os
 
 
-def process_logs(dir_list,path_in,path_out,max_logs:int):
+def copy_logs(path_in,path_out,max_logs:int):
     
     for filename in os.listdir(path_out):
         file_path = os.path.join(path_out, filename)
         if os.path.isfile(file_path):
             os.remove(file_path)
 
+    dir_list = os.listdir(path_in)
     dir_list.reverse()
     i=1
 
