@@ -50,6 +50,7 @@ def index():
                    max_logs=max_logs
                    )
     date = request.args.get('date', default = "latest")
+    app_title = os.environ.get("APP_TITLE", "MC Log Web Viewer")
     log = open_log(f'{path_out}/{date}.log')
     log_list = logs_list(path_out=path_out)
     return render_template("index.html",
@@ -57,5 +58,6 @@ def index():
                            date=date,
                            log_list=log_list,
                            server_icon=server_icon,
-                           hide_github_icon=hide_github_icon
+                           hide_github_icon=hide_github_icon,
+                           app_title=app_title
                            )
