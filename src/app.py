@@ -1,7 +1,10 @@
 import os
-from flask import Flask, render_template, request, url_for
+from flask import Flask, render_template, request
 from os.path import exists
-from utils import logs_list, open_log, processed_logs
+from libs.logs_list import logs_list
+from libs.open_log import open_log
+from libs.processed_logs import processed_logs
+
 
 
 if os.getenv('FLASK_DEBUG'):
@@ -14,8 +17,8 @@ path_out = "/data"
 hide_github_icon = os.environ.get("HIDE_GITHUB_ICON", False)
 
 if os.getenv('FLASK_DEBUG'):
-    path_in = os.environ.get("LOGS_FOLDER_PATH", "/logs")
-    path_out = os.environ.get("PROCECESSED_LOGS_FOLDER_PATH", "/data")
+    path_in = os.environ.get("LOGS_FOLDER_PATH", path_out)
+    path_out = os.environ.get("PROCECESSED_LOGS_FOLDER_PATH", path_out)
 
 app = Flask(__name__)
 

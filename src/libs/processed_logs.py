@@ -2,6 +2,7 @@ import shutil
 import gzip
 import os
 
+
 def processed_logs(dir_list,path_in,path_out):
     for f in dir_list:
         if f.endswith(".log.gz"):
@@ -17,16 +18,3 @@ def processed_logs(dir_list,path_in,path_out):
         else:
             if os.getenv('FLASK_DEBUG'):
                 print(f'ignored: {f}')
-
-
-def logs_list(path_out):
-    logs_list = os.listdir(path_out)
-    if os.getenv('FLASK_DEBUG'):
-        print(f'\nlogs_list:\n{logs_list}')
-    return logs_list
-
-
-def open_log(log_file):
-    if os.getenv('FLASK_DEBUG'):
-        print(f'\nOpen log: {log_file}')
-    return open(log_file, "r")
