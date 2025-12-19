@@ -3,7 +3,7 @@ from flask import Flask, render_template, request
 from os.path import exists
 from libs.logs_list import logs_list
 from libs.open_log import open_log
-from libs.processed_logs import processed_logs
+from libs.process_logs import process_logs
 
 
 
@@ -44,7 +44,7 @@ if os.getenv('FLASK_DEBUG'):
 @app.route("/")
 def index():   
     dir_list = os.listdir(path_in)
-    processed_logs(dir_list=dir_list,
+    process_logs(dir_list=dir_list,
                    path_in=path_in,
                    path_out=path_out,
                    max_logs=max_logs
