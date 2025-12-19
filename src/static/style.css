@@ -11,12 +11,17 @@ div#nav-left{
 }
 
 
+h2#logtitle {
+    font-family: 'Minecraft', sans-serif;
+    margin-left:1%;
+}
+
+
 div#logviewer{
     background-color: black;
     color: white;
-    overflow-x:hidden;
+    overflow-x:visible;
     overflow-y:visible;
-    margin-bottom: 10%;
     border-style: groove;
     border-radius: 5px;
     border-color: white;
