@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request
+from flask import Flask, redirect, render_template, request, url_for
 from os.path import exists
 from libs.logs_list import logs_list
 from libs.open_log import open_log
@@ -57,3 +57,8 @@ def index():
                            hide_github_icon=hide_github_icon,
                            app_title=app_title
                            )
+
+
+@app.errorhandler(404)
+def not_found(e):
+    return redirect(url_for('index'))
