@@ -1,36 +1,15 @@
-{% extends "nav.html" %}
+{% extends "base.html" %}
+
+{% block nav %}
+{% include "nav.html" %}
+{% endblock %}
 
 
 {% block logs_list %}
-
-<div id="logs_list" class="container text-center" style="display: none;">
-      <div class="row">
-        <div class="col">
-    {%for i in log_list%}
-        <a href="?date={{i}}"><button type="button" class="btn btn-outline-success">{{ i.replace('.log', ('')) }}</button></a>
-    {%endfor%}
-    </div>
-    </div>
-</div>
+{% include "logs_list.html" %}
 {% endblock %}
 
 
 {% block logviewer %}
-
-    <h2>{{ date.replace('.log', ('')) }}</h2>
-    <div id="logviewer" class="overflow-scroll" style="max-width: 100%; max-height: 82dvb;">
-        {%for i in log%}
-            <p id="logtext">{{ i }}</p>
-        {%endfor%}
-    </div>
-
-{% endblock %}
-
-
-{% block script %}
-<script>
-window.onload = function() {
-  scrollheight("logviewer");
-};
-</script>
+{% include "logviewer.html" %}
 {% endblock %}

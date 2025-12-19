@@ -1,0 +1,10 @@
+{% block logviewer %}
+
+    <h2>{{ date.replace('.log', ('')) }}</h2>
+    <div id="logviewer" class="overflow-scroll" style="max-width: 100%; max-height: 82dvb;">
+        {%for i in log%}
+            <p id="logtext">{{ i }}</p>
+        {%endfor%}
+    </div>
+
+{% endblock %}
