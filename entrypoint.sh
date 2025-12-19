@@ -10,8 +10,6 @@ if [ "$(id -u mcwebserver)" != "${PUID}" ]; then
     usermod -o -u "${PUID}" mcwebserver
 fi
 
-[ -e /server-icon.png ] && cp /server-icon.png /app/static/server-icon.png
-
 mkdir -p /data /logs
 chown -R mcwebserver:mcwebserver /home/mcwebserver /data /app
 
