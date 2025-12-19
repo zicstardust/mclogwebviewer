@@ -23,6 +23,7 @@ Log Web Viewer to Minecraft Servers
 | arm/v7 | ✅ | latest |
 | arm64 | ✅ | latest |
 | ppc64le | ✅ | latest |
+| riscv64 | ✅ | latest |
 | s390x | ✅ | latest |
 
 
