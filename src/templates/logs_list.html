@@ -1,12 +1,10 @@
 {% block logs_list %}
 
-<div id="logs_list" class="container text-center" style="display: none;">
-      <div class="row">
-        <div class="col">
+<div id="logs_list" style="display: none;">
+
     {%for i in log_list%}
-        <a href="?date={{i}}"><button type="button" class="btn btn-outline-success">{{i}}</button></a>
+        <li id="logs_list"><a id="log_button" href="?date={{i}}"><button type="button" class="btn btn-outline-success">{{i}}</button></a></li>
     {%endfor%}
-    </div>
-    </div>
+
 </div>
 {% endblock %}

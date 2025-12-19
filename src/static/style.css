@@ -1,8 +1,10 @@
+/* Base */
 html#base {
     max-height: 100%;
 }
 
 
+/*nav */
 div#nav-left{
     position:sticky; 
     left:100%;
@@ -11,6 +13,20 @@ div#nav-left{
 }
 
 
+/* logs_list */
+div#logs_list{
+text-align: center;
+max-width: max-content;
+margin: 0 auto;
+}
+
+li#logs_list {
+  display: inline;
+}
+
+
+
+/* logviwer */
 h2#logtitle {
     font-family: 'Minecraft', sans-serif;
     margin-left:1%;
