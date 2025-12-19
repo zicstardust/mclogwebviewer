@@ -4,6 +4,7 @@ from os.path import exists
 from libs.logs_list import logs_list
 from libs.open_log import open_log
 from libs.process_logs import process_logs
+from libs.set_icon import set_icon
 
 
 
@@ -21,10 +22,7 @@ max_logs = os.environ.get("MAX_LOGS", 0)
 app = Flask(__name__)
 
 
-if exists(f'{app.static_folder}/server-icon.png'):
-    server_icon=True
-else:
-    server_icon=False
+set_icon(static_dir=app.static_folder)
 
 
 if os.getenv('FLASK_DEBUG'):
@@ -36,7 +34,6 @@ if os.getenv('FLASK_DEBUG'):
     print(f'MAX_LOGS: {max_logs}')
     print(f'path_in={path_in}')
     print(f'path_out={path_out}')
-    print(f'server_icon={server_icon}')
     print(f'hide_github_icon={hide_github_icon}')
     
     print('==============================')
@@ -57,7 +54,6 @@ def index():
                            log=log,
                            date=date,
                            log_list=log_list,
-                           server_icon=server_icon,
                            hide_github_icon=hide_github_icon,
                            app_title=app_title
                            )
