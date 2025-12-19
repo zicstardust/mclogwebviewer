@@ -1,6 +1,6 @@
 # MC Log Web Viewer
 
-Public Log Web Viewer to Minecraft Servers
+Log Web Viewer to Minecraft Servers
 
 [GitHub](https://github.com/zicstardust/mclogwebviewer)
 
@@ -39,7 +39,7 @@ services:
     ports:
       - 8080:8080/tcp #Web port
     volumes:
-      - <Path Minecraft server logs>:/logs:ro
+      - <Minecraft Server Logs Path>:/logs:ro
 ```
 
 ## Environment variables
@@ -47,5 +47,5 @@ services:
 | variables | Function | Default |
 | :----: | --- | --- |
 | `TZ` | Set Timezone | |
-| `PUID` | Set UID | 1000 |
-| `PGID` | Set GID | 1000 |
+| `PUID` | Set UID with read permission on log files | 1000 |
+| `PGID` | Set GID with read permission on log files | 1000 |
