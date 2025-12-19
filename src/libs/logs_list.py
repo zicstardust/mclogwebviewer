@@ -7,4 +7,5 @@ def logs_list(path_out):
         print(f'\nlogs_list:\n{logs_dir}')
     for f in logs_dir:
         logs_list.append(f.replace(".log", ""))
+    logs_list.reverse()
     return logs_list
