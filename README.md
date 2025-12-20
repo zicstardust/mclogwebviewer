@@ -4,14 +4,19 @@ Log Web Viewer to Minecraft Servers
 
 [GitHub](https://github.com/zicstardust/mclogwebviewer)
 
-[Docker Hub](https://hub.docker.com/r/zicstardust/mclogwebviewer)
+## Container
+### Tags
 
+| Tag | Architecture | Description |
+| :----: | :----: | :----: |
+| [`latest`](https://github.com/zicstardust/mclogwebviewer/blob/main/dockerfile) | amd64 | Default Tag |
 
-## Tags
+### Registries
+| Registry | Full image name | Description |
+| :----: | :----: | :----: |
+| [`docker.io`](https://hub.docker.com/r/zicstardust/mclogwebviewer) | `docker.io/zicstardust/mclogwebviewer` | Docker Hub |
+| [`ghcr.io`](https://github.com/zicstardust/mclogwebviewer/pkgs/container/mclogwebviewer) | `ghcr.io/zicstardust/mclogwebviewer` | GitHub |
 
-| Tag | Description |
-| :----: |--- |
-| [`latest`](https://github.com/zicstardust/mclogwebviewer/blob/main/Dockerfile) | Default tag |
 
 ### Supported Architectures
 
