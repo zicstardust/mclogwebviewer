@@ -11,11 +11,13 @@ if os.getenv('FLASK_DEBUG'):
 
 path_in = "/logs"
 path_out = "/data"
+schedule_path = "/app"
 path_icon = "/server-icon.png"
 max_logs = os.environ.get("MAX_LOGS", 0)
-hide_github_icon=os.environ.get("HIDE_GITHUB_ICON", False),
+hide_github_icon=os.environ.get("HIDE_GITHUB_ICON", False)
 app_title=os.environ.get("APP_TITLE", "MC Log Web Viewer")
 filter_text=os.environ.get("FILTER_TEXT", '')
+schedule_interval=os.environ.get("SCHEDULE_INTERVAL", "0")
 
 app = Flask(__name__)
 app.register_blueprint(index_bp)
@@ -26,7 +28,7 @@ def not_found(e):
     return redirect(url_for('index.index'))
     
     
-set_icon(static_dir=app.static_folder)
+set_icon(static_dir=app.static_folder,path_icon=path_icon)
 
 
 if os.getenv('FLASK_DEBUG'):
@@ -34,6 +36,7 @@ if os.getenv('FLASK_DEBUG'):
     
     path_in = os.environ.get("LOGS_FOLDER_PATH", path_out)
     path_out = os.environ.get("PROCECESSED_LOGS_FOLDER_PATH", path_out)
+    schedule_path=os.environ.get("SCHEDULE_FOLDER_PATH", schedule_path)
     path_icon=os.environ.get("GET_ICON_PATH", path_icon)
 
     print(f'MAX_LOGS: {max_logs}')

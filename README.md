@@ -60,3 +60,4 @@ services:
 | `MAX_LOGS` | Maximum number of old logs. If `0` displays all logs. | 0 |
 | `APP_TITLE` | Set Page Title | MC Log Web Viewer  |
 | `FILTER_TEXT` | Lines containing the text of this variable will not appear, separator "," | |
+| `SCHEDULE_INTERVAL` | Time to generate a new scan of the log files. Example: `30s`: 30 seconds, `5m`: 5 minutes, `1d`: 1 day, `1w`: 1 week, `0`: Will scan every time the application is accessed. | 0 |
