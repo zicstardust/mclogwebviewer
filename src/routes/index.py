@@ -19,8 +19,8 @@ def index():
                            log=log,
                            date=date,
                            log_list=log_list,
-                           hide_github_icon=os.environ.get("HIDE_GITHUB_ICON", False),
-                           app_title=os.environ.get("APP_TITLE", "MC Log Web Viewer")
+                           hide_github_icon=app.hide_github_icon,
+                           app_title=app.app_title
                            )
 
 
