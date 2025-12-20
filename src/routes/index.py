@@ -1,4 +1,3 @@
-import os
 from flask import Blueprint, render_template, request
 import app
 from libs.open_log import open_log
