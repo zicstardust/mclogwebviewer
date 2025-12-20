@@ -1,4 +1,5 @@
 import os
+import app
 import shutil
 from urllib.request import urlretrieve
 
@@ -6,7 +7,7 @@ url='https://images.icon-icons.com/1381/PNG/512/minecraft_94415.png'
 
 def set_icon(static_dir,
              default_icon=url,
-             path_icon=os.environ.get("GET_ICON_PATH", '/server-icon.png')):
+             path_icon=app.path_icon):
     if os.path.exists(f'{static_dir}/server-icon'):
         os.remove(f'{static_dir}/server-icon')
 

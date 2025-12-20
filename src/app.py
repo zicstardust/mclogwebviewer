@@ -11,6 +11,7 @@ if os.getenv('FLASK_DEBUG'):
 
 path_in = "/logs"
 path_out = "/data"
+path_icon = "/server-icon.png"
 max_logs = os.environ.get("MAX_LOGS", 0)
 hide_github_icon=os.environ.get("HIDE_GITHUB_ICON", False),
 app_title=os.environ.get("APP_TITLE", "MC Log Web Viewer")
@@ -33,6 +34,7 @@ if os.getenv('FLASK_DEBUG'):
     
     path_in = os.environ.get("LOGS_FOLDER_PATH", path_out)
     path_out = os.environ.get("PROCECESSED_LOGS_FOLDER_PATH", path_out)
+    path_icon=os.environ.get("GET_ICON_PATH", path_icon)
 
     print(f'MAX_LOGS: {max_logs}')
     print(f'path_in={path_in}')
