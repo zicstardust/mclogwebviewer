@@ -32,7 +32,3 @@ def filter_logs(path_out,filter:str):
         with open(f'{path_out}/{f}', "w") as file:
             file.write(log_file)
 
-
-
-
-filter_logs(path_out='./data',filter="[ServerMain/INFO],[Server thread/WARN]")
