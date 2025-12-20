@@ -24,9 +24,7 @@ app.register_blueprint(index_bp)
 def not_found(e):
     return redirect(url_for('index.index'))
     
-
-#app.register_blueprint(error404_bp)
-
+    
 set_icon(static_dir=app.static_folder)
 
 
