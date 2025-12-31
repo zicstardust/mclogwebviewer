@@ -34,22 +34,22 @@ def str_to_datetime(date_time:str,format='%Y-%m-%d %H:%M:%S'):
     return datetime_str
 
 
-def datetime_to_file(date_time:datetime, path):
-    if os.path.exists(f'{path}/datetime'):
-        os.remove(f'{path}/datetime')
+def datetime_to_file(date_time:datetime, schedule_file='/tmp/mclogdatetime'):
+    if os.path.exists(schedule_file):
+        os.remove(schedule_file)
 
     date_str=datetime_to_str(date_time)
-    with open(f'{path}/datetime', "w") as file:
+    with open(schedule_file, "w") as file:
         file.write(date_str)
 
 
 
-def file_to_datetime(path):
-    with open(f'{path}/datetime', "r") as f:
+def file_to_datetime(schedule_file='/tmp/mclogdatetime'):
+    with open(schedule_file, "r") as f:
         file = f.readlines()
         res = ' '.join(file)
     return str_to_datetime(res)
 
-def generate_file(interval, path):
+def generate_file(interval, schedule_file='/tmp/mclogdatetime'):
     date_time=parser_interval(interval)
-    datetime_to_file(date_time, path)
+    datetime_to_file(date_time, schedule_file)

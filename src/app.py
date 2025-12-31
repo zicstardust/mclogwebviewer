@@ -11,7 +11,6 @@ if os.getenv('FLASK_DEBUG'):
 
 path_in = "/logs"
 path_out = "/data"
-schedule_path = "/app"
 path_icon = "/server-icon.png"
 max_logs = os.environ.get("MAX_LOGS", 0)
 hide_github_icon=os.environ.get("HIDE_GITHUB_ICON", False)
@@ -36,7 +35,6 @@ if os.getenv('FLASK_DEBUG'):
     
     path_in = os.environ.get("LOGS_FOLDER_PATH", path_out)
     path_out = os.environ.get("PROCECESSED_LOGS_FOLDER_PATH", path_out)
-    schedule_path=os.environ.get("SCHEDULE_FOLDER_PATH", schedule_path)
     path_icon=os.environ.get("GET_ICON_PATH", path_icon)
 
     print(f'MAX_LOGS: {max_logs}')

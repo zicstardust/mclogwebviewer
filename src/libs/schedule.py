@@ -10,21 +10,21 @@ def schedule_isExpired():
     elif (parser_interval(app.schedule_interval) == 0):
         print("Invalid internal, SCHEDULE_INTERVAL will be ignored")
         return True
-    elif os.path.exists(f'{app.schedule_path}/datetime'):
+    elif os.path.exists('/tmp/mclogdatetime'):
         date_now=datetime.now()
-        date_file=file_to_datetime(app.schedule_path)
+        date_file=file_to_datetime()
         if (date_now > date_file):
-            generate_file(app.schedule_interval, app.schedule_path)
+            generate_file(app.schedule_interval)
             if os.getenv('FLASK_DEBUG'):
                 print("Schedule expired!")
-                print(f"New schedule will expire: {file_to_datetime(app.schedule_path)}")
+                print(f"New schedule will expire: {file_to_datetime()}")
             return True
         else:
             if os.getenv('FLASK_DEBUG'):
-                print(f"Schedule will expire: {file_to_datetime(app.schedule_path)}")
+                print(f"Schedule will expire: {file_to_datetime()}")
             return False
     else:
         if os.getenv('FLASK_DEBUG'):
             print("Schedule file not found, create now")
-        generate_file(app.schedule_interval, app.schedule_path)
+        generate_file(interval=app.schedule_interval)
         return True
