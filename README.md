@@ -34,7 +34,7 @@ Log Web Viewer to Minecraft Servers
 
 ## Usage
 ### Compose
-```
+``` yml
 services:
   mclogwebviewer:
     container_name: mclogwebviewer
