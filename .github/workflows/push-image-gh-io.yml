@@ -10,15 +10,6 @@ on:
       - 'entrypoint.sh'
       - '.dockerignore'
       - '.github/workflows/push-image-gh-io.yml'
-  pull_request:
-    branches: [ "main" ]
-    paths:
-      - 'dockerfile'
-      - 'requirements.txt'
-      - 'src/**'
-      - 'entrypoint.sh'
-      - '.dockerignore'
-      - '.github/workflows/push-image-gh-io.yml'
 
 env:
   PLATAFORM_ARCH: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64/v8,linux/ppc64le,linux/riscv64,linux/s390x
