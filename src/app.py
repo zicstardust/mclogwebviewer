@@ -8,18 +8,18 @@ if os.getenv('FLASK_DEBUG'):
     from dotenv import load_dotenv
     load_dotenv()
 
+app = Flask(__name__)
+app.register_blueprint(index_bp)
 
 path_in = "/logs"
 path_out = "/data"
-path_icon = "/server-icon.png"
+path_icon = f"{app.static_folder}/server-icon.png"
 max_logs = os.environ.get("MAX_LOGS", 0)
 hide_github_icon=os.environ.get("HIDE_GITHUB_ICON", False)
 app_title=os.environ.get("APP_TITLE", "MC Log Web Viewer")
 filter_text=os.environ.get("FILTER_TEXT", '')
 schedule_interval=os.environ.get("SCHEDULE_INTERVAL", "0")
 
-app = Flask(__name__)
-app.register_blueprint(index_bp)
 
 #Error 404
 @app.errorhandler(404)
