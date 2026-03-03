@@ -1,6 +1,6 @@
 import os
 from flask import Flask, redirect, url_for
-from libs.set_icon import set_icon
+from libs.get_icon import get_icon
 from routes.index import index_bp
 
 
@@ -13,7 +13,7 @@ app.register_blueprint(index_bp)
 
 path_in = os.environ.get("LOGS_DIR", './logs')
 path_out = os.environ.get("DATA_DIR", './data')
-path_icon = f"{app.static_folder}/server-icon.png"
+icon_path = os.environ.get("ICON", './server-icon.png')
 max_logs = os.environ.get("MAX_LOGS", 0)
 hide_github_icon=os.environ.get("HIDE_GITHUB_ICON", False)
 app_title=os.environ.get("APP_TITLE", "MC Log Web Viewer")
@@ -27,15 +27,11 @@ def not_found(e):
     return redirect(url_for('index.index'))
     
     
-set_icon(static_dir=app.static_folder,path_icon=path_icon)
+os.environ["ICON"] = get_icon(icon=icon_path,static_dir=app.static_folder)
 
 
 if os.getenv('FLASK_DEBUG'):
     print('=========FLASK_DEBUG==========')
-    
-    path_in = os.environ.get("LOGS_FOLDER_PATH", path_out)
-    path_out = os.environ.get("PROCECESSED_LOGS_FOLDER_PATH", path_out)
-    path_icon=os.environ.get("GET_ICON_PATH", path_icon)
 
     print(f'MAX_LOGS: {max_logs}')
     print(f'path_in={path_in}')

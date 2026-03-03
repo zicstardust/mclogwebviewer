@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, request
 import app
+import os
 from libs.open_log import open_log
 from libs.log_generator import log_generator
 from libs.logs_list import logs_list
@@ -21,6 +22,7 @@ def index():
                            log=log,
                            date=date,
                            log_list=log_list,
+                           icon=os.getenv('ICON'),
                            hide_github_icon=app.hide_github_icon,
                            app_title=app.app_title
                            )
