@@ -4,3 +4,4 @@ logs/
 data/
 .env
 /server-icon.png
+src/static/custom-server-icon

@@ -11,8 +11,8 @@ if os.getenv('FLASK_DEBUG'):
 app = Flask(__name__)
 app.register_blueprint(index_bp)
 
-path_in = os.environ.get("LOGS_DIR", './logs')
-path_out = os.environ.get("DATA_DIR", './data')
+path_in = '/logs'
+path_out = '/data'
 icon_path = os.environ.get("ICON", './server-icon.png')
 max_logs = os.environ.get("MAX_LOGS", 0)
 hide_github_icon=os.environ.get("HIDE_GITHUB_ICON", False)

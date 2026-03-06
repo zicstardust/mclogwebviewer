@@ -4,8 +4,6 @@ ENV PYTHONUNBUFFERED=1
 ENV PUID=1000
 ENV PGID=1000
 
-ENV LOG_DIR="/logs"
-ENV DATA_DIR="/data"
 ENV ICON="/server-icon.png"
 
 WORKDIR /app

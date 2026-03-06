@@ -2,9 +2,9 @@ services:
    mclogwebviewer:
     container_name: mclogwebviewer
     build: .
-    #env_file: .env
+    env_file: .env
     ports:
       - "8080:8080"
     volumes:
       - ./logs:/logs:ro
-      #- ./server-icon.png:/server-icon.png:ro
+      - ./zicstardust.jpg:/server-icon.png:ro
