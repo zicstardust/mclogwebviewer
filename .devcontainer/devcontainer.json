@@ -1,0 +1,10 @@
+{
+	"name": "mclogwebviewer",
+	"image": "mcr.microsoft.com/devcontainers/python:3-3.14-trixie",
+	"forwardPorts": [5000],
+	"mounts": [
+  		"source=./logs,target=/logs,type=bind,consistency=cached",
+  		"source=./data,target=/data,type=bind,consistency=cached"
+	],
+	"postCreateCommand": "pip3 install --user -r requirements-dev.txt"
+}

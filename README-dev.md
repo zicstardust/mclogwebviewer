@@ -1,14 +1,7 @@
 # Dev environment
 
 ### Python version
-Recommended to use asdf to keep the same python version
-
-Python version used in `.tool-versions` file
-
-### Install dependencies
-``` shell
-pip install -r requirements-dev.txt
-```
+Recommended to use devcontainer with VS Code
 
 ### Create `.env` file
 
