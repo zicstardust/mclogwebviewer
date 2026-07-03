@@ -22,7 +22,6 @@ Log Web Viewer to Minecraft Servers
 
 | Architecture | Available | Tag |
 | :----: | :----: | ---- |
-| 386 | ✅ | latest |
 | amd64 | ✅ | latest |
 | arm/v6 | ✅ | latest |
 | arm/v7 | ✅ | latest |
