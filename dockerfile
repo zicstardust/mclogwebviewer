@@ -1,4 +1,4 @@
-FROM python:3.14.6-alpine
+FROM python:3.15.0rc1-alpine
 
 ENV PYTHONUNBUFFERED=1
 ENV PUID=1000
