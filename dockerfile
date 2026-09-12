@@ -12,16 +12,18 @@ COPY requirements.txt .
 COPY /src .
 COPY entrypoint.sh /entrypoint.sh
 
-RUN chmod +x /entrypoint.sh; \
+RUN apk update; \
+    apk upgrade -a; \
+    \
+    chmod +x /entrypoint.sh; \
+    \
     apk add --no-cache su-exec shadow; \
+    \
     addgroup mcwebserver -g ${PGID}; \
     adduser -D -u ${PUID} -G mcwebserver mcwebserver; \
     mkdir -p /home/mcwebserver; \
     chown -R mcwebserver:mcwebserver /home/mcwebserver; \
     su-exec mcwebserver pip3 install --no-warn-script-location --user --no-cache-dir -r requirements.txt
-    
-    #su-exec mcwebserver pip3 install --user --no-cache-dir -r requirements.txt
-#ENV PATH="/home/mcwebserver/.local/bin:${PATH}"
 
 EXPOSE 8080
 
