@@ -1,4 +1,6 @@
-src/__pycache__/
-src/routes/__pycache__/
-src/libs/__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
 src/static/custom-server-icon
