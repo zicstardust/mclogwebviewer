@@ -6,5 +6,5 @@
   		"source=./logs,target=/logs,type=bind,consistency=cached",
   		"source=./data,target=/data,type=bind,consistency=cached"
 	],
-	"postCreateCommand": "pip3 install --user -r requirements-dev.txt"
+	"postCreateCommand": "pip install -e \".[dev]\""
 }

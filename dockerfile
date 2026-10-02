@@ -1,12 +1,13 @@
 FROM python:3.14.8-alpine3.24
 
 ENV PYTHONUNBUFFERED=1
+ENV PATH="/home/mcwebserver/.local/bin:${PATH}"
 
 ENV ICON="/server-icon.png"
 
 WORKDIR /app
 
-COPY requirements.txt .
+COPY pyproject.toml .
 COPY /src .
 COPY entrypoint.sh /entrypoint.sh
 
@@ -18,7 +19,10 @@ RUN apk update; \
     apk add --no-cache su-exec shadow; \
     \
     adduser -D -u 1000 -s /bin/nologin -h /home/mcwebserver mcwebserver; \
-    su-exec mcwebserver pip3 install --no-warn-script-location --user --no-cache-dir -r requirements.txt
+    chown -R mcwebserver:mcwebserver /home/mcwebserver; \
+    chown -R mcwebserver:mcwebserver /app; \
+    \
+    su-exec mcwebserver pip3 install --no-cache-dir --user .
 
 EXPOSE 8080
 
