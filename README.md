@@ -9,7 +9,7 @@ Log Web Viewer to Minecraft Servers
 
 | Tag | Description |
 | :----: | :----: |
-| [`latest`](https://github.com/zicstardust/mclogwebviewer/blob/main/dockerfile) | Default Tag |
+| [`latest`](https://github.com/zicstardust/mclogwebviewer/blob/main/Dockerfile) | Default Tag |
 
 ### Registries
 | Registry | Full image name | Description |

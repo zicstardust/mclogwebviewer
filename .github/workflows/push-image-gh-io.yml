@@ -4,12 +4,11 @@ on:
   push:
     branches: [ "main" ]
     paths:
-      - 'dockerfile'
+      - 'Dockerfile'
       - 'pyproject.toml'
       - 'src/**'
       - 'entrypoint.sh'
       - '.dockerignore'
-      - '.github/workflows/push-image-gh-io.yml'
 
 env:
   PLATAFORM_ARCH: linux/amd64,linux/arm64/v8
@@ -44,7 +43,7 @@ jobs:
         uses: docker/build-push-action@v7
         with:
           context: .
-          file: dockerfile
+          file: Dockerfile
           platforms: ${{ env.PLATAFORM_ARCH }}
           push: true
           #proveance: false
