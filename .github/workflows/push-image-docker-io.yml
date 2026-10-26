@@ -9,6 +9,9 @@ on:
       - 'src/**'
       - 'entrypoint.sh'
       - '.dockerignore'
+  schedule:
+    - cron: '0 0 * * 5'
+  workflow_dispatch:
 
 env:
   PLATAFORM_ARCH: linux/amd64,linux/arm64/v8
